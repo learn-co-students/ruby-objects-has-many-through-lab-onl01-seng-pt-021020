@@ -29,11 +29,12 @@ class Patient
 
 #has many doctors, through appointments
     def doctors
-      arr_doctors=[]
-      appointments.each do |appt|
-          arr_doctors << appt.doctor
-      end
-      arr_doctors
+      # arr_doctors=[]
+      # appointments.each do |appt|
+      #     arr_doctors << appt.doctor
+      # end
+      # arr_doctors
+      self.appointments.map{|appt| appt.doctor}
     end
 
 end
