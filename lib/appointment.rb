@@ -14,17 +14,5 @@ class Appointment
   def self.all
     @@all
   end
-
-  def date
-    self.date
-  end
-  
-  def patient
-    @patient
-  end
-
-  def doctors
-    @doctor 
-  end
   
 end
