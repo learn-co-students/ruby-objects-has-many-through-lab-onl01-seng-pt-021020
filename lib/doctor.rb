@@ -7,25 +7,27 @@ class Doctor
 
   def initialize(name)
     @name = name
+    @appointment = appointment
+    @patient = patient 
     @@all << self
   end
 
   def self.all
     @@all
   end
-
-  def new_appointment(date, patient)
-    Appointment.new(date, patient, self)
-  end
-
+  
   def appointments
     Appointment.all.select do |appointment|
       appointment.doctor
     end
   end
 
+  def new_appointment(date, patient)
+    Appointment.new(date, patient, self)
+  end
+
   def patients
-    appointments.map do |appointment|
+    Appointments.each do |appointment|
       appointment.patients
     end
   end

@@ -19,12 +19,12 @@ class Appointment
     self.date
   end
   
-  def patients
-    self.patient
+  def patient
+    @patient
   end
 
   def doctors
-    self.doctor
+    @doctor 
   end
   
 end
