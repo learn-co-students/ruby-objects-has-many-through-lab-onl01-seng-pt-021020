@@ -1,8 +1,9 @@
+require "pry"
 class Patient
   
   @@all = []
   
-  attr_reader :name, :appointment, :doctor
+  attr_reader :name, :appointment, :doctor, :date 
   
   def initialize(name)
     @name = name 
@@ -19,7 +20,8 @@ class Patient
   
   def appointments
     Appointment.all.select do |appointment|
-      appointment.patient 
+      appointment.patient
+     #binding.pry 
     end
   end
   
